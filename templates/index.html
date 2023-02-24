@@ -1,0 +1,32 @@
+{% extends "import.html" %} 
+{% block content %}
+
+<center>
+<br><h2>Please, Upload the file</h2><br>
+ <!--.form tag to actually upload the tag..-->
+  <!--.requested file from the app.py file by request.file ..-->
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+         <!--.Accept the file png jpg jpeg..-->
+         <input type="file" name="file" class="btn btn-success" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+ <!--..Section for loading the images.-->
+    <div class="image-section" style="display:none;">
+         <img id="imagePreview"  class="img-responsive" src="#" style="width:300px;height:300px;"/><br><br>
+         <div>
+             <!--...predict button will appear here-->
+            <button type="button" class="btn btn-info btn-lg " id="btn-predict">Predict!</button>
+         </div>
+    </div>
+
+
+ <!--..it will on app.route the prediction on images will be done.-->
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+
+</center><br><br>
+{% endblock %}
